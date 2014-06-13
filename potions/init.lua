@@ -498,16 +498,25 @@ for _,i in pairs{
 
 end
 
+local default_effects = {
+	antigravity = 1,
+	speed = 1,
+	jump = 1,
+	gravity = 1,
+	tnt = 0,
+	air = 0,
+}
+
+local function cp_table(t)
+	local tab = {}
+	for n,i in pairs(t) do
+		tab[n] = i
+	end
+	return tab
+end
 
 minetest.register_on_joinplayer(function(player)
-	potions.players[player:get_player_name()] = {
-		antigravity = 1,
-		speed = 1,
-		jump = 1,
-		gravity = 1,
-		tnt = 0,
-		air = 0,
-	}
+	potions.players[player:get_player_name()] = cp_table(default_effects)
 end)
 
 --local timer = 0
@@ -535,12 +544,23 @@ minetest.register_chatcommand("effect", {
 	params = "none",
 	description = "get effect info",
 	func = function(name, param)
-		minetest.chat_send_player(name, "effects:")
 		local potions_e = potions.players[name]
-		if potions_e ~= nil then
-			for potion_name, val in pairs(potions_e) do
-				minetest.chat_send_player(name, potion_name .. "=" .. val)
+		if not potions_e then
+			return "something went wrong"
+		end
+		local text,n = {"effects:"},2
+		for potion_name, val in pairs(potions_e) do
+			if val ~= default_effects[potion_name] then
+				text[n] = potion_name .. " = " .. val
+				n = n+1
 			end
+		end
+		if n == 2 then
+			minetest.chat_send_player(name, "no special effects")
+			return
+		end
+		for _,i in pairs(text) do
+			minetest.chat_send_player(name, i)
 		end
 	end,
 })
