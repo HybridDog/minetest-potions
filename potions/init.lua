@@ -3,7 +3,7 @@ potions = {
 	effects = {
 		phys_override = function(sname, name, fname, time, sdata, flags)
 			local def = {
-				on_use = function(itemstack, user, pointed_thing)
+				on_use = function(itemstack, user)
 					potions.grant(time, user:get_player_name(), fname.."_"..flags.type..sdata.type, name, flags)
 					itemstack:take_item()
 					return itemstack
@@ -152,6 +152,7 @@ potions = {
 					drawtype = "plantlike",
 					paramtype = "light",
 					walkable = false,
+					stack_max = 1,
 					groups = {dig_immediate=3,attached_node=1},
 					--sounds = default.node_sound_glass_defaults(),
 				}
@@ -166,15 +167,21 @@ potions = {
 				for name, val in pairs(potions.effects[def.effect](sname, name, fname, time, sdata, flags)) do
 					item_def[name] = val
 				end
-				for name, val in pairs(sdata.set) do
-					item_def[name] = val
+				local set = sdata.set
+				if set then
+					for name, val in pairs(set) do
+						item_def[name] = val
+					end
 				end
-				for name, val in pairs(sdata.effects) do
-					item_def.potions[name] = val
+				local effects = sdata.effects
+				if effects then
+					for name, val in pairs(effects) do
+						item_def.potions[name] = val
+					end
 				end
 				minetest.register_node(fname.."_"..tps[t]..sdata.type, item_def)
 				--potions.register_liquid(i..tps[t]..sname, name.." ("..tps[t].." "..i..")", item_def.on_use)
-				if minetest.get_modpath("throwing")~=nil then
+				if minetest.get_modpath("throwing") ~= nil then
 					potions.register_arrow(fname.."_"..tps[t]..sdata.type, i..tps[t]..sname, name.." ("..tps[t].." "..i..")", item_def.on_use,
 							item_def.description, item_def.inventory_image)
 				end
@@ -242,21 +249,18 @@ potions.register_potion("speed", "Speed", "potions:speed", 300, {
 	types = {
 		{
 			type = 1,
-			set = {},
 			effects = {
 				speed = 1,
 			},
 		},
 		{
 			type = 2,
-			set = {},
 			effects = {
 				speed = 2,
 			},
 		},
 		{
 			type = 3,
-			set = {},
 			effects = {
 				speed = 3,
 			},
@@ -268,21 +272,18 @@ potions.register_potion("antigrav", "Anti-Gravity", "potions:antigravity", 300, 
 	types = {
 		{
 			type = 1,
-			set = {},
 			effects = {
 				gravity = -0.1,
 			},
 		},
 		{
 			type = 2,
-			set = {},
 			effects = {
 				gravity = -0.2,
 			},
 		},
 		{
 			type = 3,
-			set = {},
 			effects = {
 				gravity = -0.3,
 			},
@@ -295,21 +296,18 @@ potions.register_potion("jump", "Jumping", "potions:jumping", 300, {
 	types = {
 		{
 			type = 1,
-			set = {},
 			effects = {
 				jump = 0.5,
 			},
 		},
 		{
 			type = 2,
-			set = {},
 			effects = {
 				jump = 1,
 			},
 		},
 		{
 			type = 3,
-			set = {},
 			effects = {
 				jump = 1.5,
 			},
@@ -323,23 +321,14 @@ potions.register_potion("ouhealth", "One Use Health", "potions:ouhealth", 300, {
 		{
 			type = 1,
 			hp = 20,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 2,
 			hp = 40,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 3,
 			hp = 60,
-			set = {},
-			effects = {
-			},
 		},
 	}
 })
@@ -350,23 +339,14 @@ potions.register_potion("health", "Health", "potions:health", 300, {
 		{
 			type = 1,
 			time = 60,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 2,
 			time = 120,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 3,
 			time = 180,
-			set = {},
-			effects = {
-			},
 		},
 	}
 })
@@ -377,23 +357,14 @@ potions.register_potion("ouair", "One Use Air", "potions:ouair", 300, {
 		{
 			type = 1,
 			br = 2,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 2,
 			br = 5,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 3,
 			br = 10,
-			set = {},
-			effects = {
-			},
 		},
 	}
 })
@@ -404,23 +375,14 @@ potions.register_potion("air", "Air", "potions:air", 300, {
 		{
 			type = 1,
 			time = 60,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 2,
 			time = 120,
-			set = {},
-			effects = {
-			},
 		},
 		{
 			type = 3,
 			time = 180,
-			set = {},
-			effects = {
-			},
 		},
 	}
 })
@@ -493,122 +455,60 @@ for _,i in pairs{
 	{"health", "red"},
 	{"ouhealth", "blue"},
 } do
-	local typ, dye = unpack(i)
-	minetest.register_craft({
-		output = "potions:"..typ.."_sub2",
-		recipe = {
-			{'','potions:'..typ..'_sub3','dye:'..dye},
-		},
-	})
+	local typ = "potions:"..i[1].."_"
+	local dye = "dye:"..i[2]
+
+	for _,j in pairs({
+		{"sub3", "sub2"},
+		{"sub2", "sub1"},
+		{"sub1", "add1"},
+		{"add1", "add2"},
+		{"add2", "add3"},
+	}) do
+		local out = typ..j[2]
+		local inp = typ..j[1]
+		minetest.register_craft({
+			output = out,
+			recipe = {
+				{inp, dye},
+			},
+		})
+
+		minetest.register_craft({
+			output = inp,
+			recipe = {
+				{out.." 1"},
+			},
+			replacements = {
+				{out, dye},
+			},
+		})
+	end
 
 	minetest.register_craft({
-		output = "potions:"..typ.."_sub1",
+		output = typ.."add1",
 		recipe = {
-			{'','potions:'..typ..'_sub2','dye:'..dye},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_add1",
-		recipe = {
-			{'','potions:'..typ..'_sub1','dye:'..dye},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_add1",
-		recipe = {
-			{'','bucket:bucket_water','dye:'..dye},
-			{'','vessels:drinking_glass','dye:'..dye},
+			{dye, dye, dye},
+			{"", "bucket:bucket_water", "vessels:drinking_glass"},
 		},
 		replacements = {
-			{'bucket:bucket_water','bucket:bucket_empty'},
+			{"bucket:bucket_water","bucket:bucket_empty"},
 		},
 	})
 
-	minetest.register_craft({
-		output = "potions:"..typ.."_add2",
-		recipe = {
-			{'','potions:'..typ..'_add1','dye:'..dye},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_add3",
-		recipe = {
-			{'','potions:'..typ..'_add2','dye:'..dye},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_sub3",
-		recipe = {
-			{'dye:'..dye,'potions:'..typ..'_sub2',''},
-			{'dye:'..dye,'',''},
-			{'dye:'..dye,'',''},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_sub2",
-		recipe = {
-			{'dye:'..dye,'potions:'..typ..'_sub1',''},
-			{'dye:'..dye,'',''},
-			{'dye:'..dye,'',''},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_sub1",
-		recipe = {
-			{'dye:'..dye,'bucket:bucket_water',''},
-			{'dye:'..dye,'vessels:drinking_glass',''},
-			{'dye:'..dye,'',''},
-		},
-		replacements = {
-			{'bucket:bucket_water','bucket:bucket_empty'},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_sub1",
-		recipe = {
-			{'dye:'..dye,'potions:'..typ..'_add1',''},
-			{'dye:'..dye,'',''},
-			{'dye:'..dye,'',''},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_add1",
-		recipe = {
-			{'dye:'..dye,'potions:'..typ..'_add2',''},
-			{'dye:'..dye,'',''},
-			{'dye:'..dye,'',''},
-		},
-	})
-
-	minetest.register_craft({
-		output = "potions:"..typ.."_add2",
-		recipe = {
-			{'dye:'..dye,'potions:'..typ..'_add3',''},
-			{'dye:'..dye,'',''},
-			{'dye:'..dye,'',''},
-		},
-	})
 end
 
 
 minetest.register_on_joinplayer(function(player)
 	potions.players[player:get_player_name()] = {
 		antigravity = 1,
+		speed = 1,
 		jump = 1,
 		gravity = 1,
 		tnt = 0,
 		air = 0,
 	}
 end)
-
 
 --local timer = 0
 --minetest.register_globalstep(function(dtime)
@@ -637,7 +537,7 @@ minetest.register_chatcommand("effect", {
 	func = function(name, param)
 		minetest.chat_send_player(name, "effects:")
 		local potions_e = potions.players[name]
-		if potions_e~=nil then
+		if potions_e ~= nil then
 			for potion_name, val in pairs(potions_e) do
 				minetest.chat_send_player(name, potion_name .. "=" .. val)
 			end
