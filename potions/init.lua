@@ -516,7 +516,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:cyan'},
 		{'','vessels:drinking_glass','dye:cyan'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -562,7 +564,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:cyan','bucket:bucket_water',''},
 		{'dye:cyan','vessels:drinking_glass',''},
-		{'dye:cyan','',''}, }; replacements = {
+		{'dye:cyan','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -627,7 +631,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:violet'},
 		{'','vessels:drinking_glass','dye:violet'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -673,7 +679,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:violet','bucket:bucket_water',''},
 		{'dye:violet','vessels:drinking_glass',''},
-		{'dye:violet','',''}, }; replacements = {
+		{'dye:violet','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -738,7 +746,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:yellow'},
 		{'','vessels:drinking_glass','dye:yellow'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -784,7 +794,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:yellow','bucket:bucket_water',''},
 		{'dye:yellow','vessels:drinking_glass',''},
-		{'dye:yellow','',''}, }; replacements = {
+		{'dye:yellow','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -849,7 +861,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:green'},
 		{'','vessels:drinking_glass','dye:green'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -895,7 +909,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:green','bucket:bucket_water',''},
 		{'dye:green','vessels:drinking_glass',''},
-		{'dye:green','',''}, }; replacements = {
+		{'dye:green','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -960,7 +976,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:brown'},
 		{'','vessels:drinking_glass','dye:brown'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -1006,7 +1024,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:brown','bucket:bucket_water',''},
 		{'dye:brown','vessels:drinking_glass',''},
-		{'dye:brown','',''}, }; replacements = {
+		{'dye:brown','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -1071,7 +1091,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:red'},
 		{'','vessels:drinking_glass','dye:red'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -1117,7 +1139,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:red','bucket:bucket_water',''},
 		{'dye:red','vessels:drinking_glass',''},
-		{'dye:red','',''}, }; replacements = {
+		{'dye:red','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -1182,7 +1206,9 @@ minetest.register_craft({
 	recipe = {
 		{'','bucket:bucket_water','dye:blue'},
 		{'','vessels:drinking_glass','dye:blue'},
-		{'','',''}, }; replacements = {
+		{'','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
@@ -1228,7 +1254,9 @@ minetest.register_craft({
 	recipe = {
 		{'dye:blue','bucket:bucket_water',''},
 		{'dye:blue','vessels:drinking_glass',''},
-		{'dye:blue','',''}, }; replacements = {
+		{'dye:blue','',''},
+	},
+	replacements = {
 		{'bucket:bucket_water','bucket:bucket_empty'},
 	},
 })
