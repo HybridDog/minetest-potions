@@ -484,96 +484,782 @@ potions.register_potion("air", "Air", "potions:air", 300, {
 --	},
 --})
 
-minetest.register_craft({ output = "potions:speed_sub2"; recipe = { {'','potions:speed_sub3','dye:cyan'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:speed_sub1"; recipe = { {'','potions:speed_sub2','dye:cyan'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:speed_add1"; recipe = { {'','potions:speed_sub1','dye:cyan'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:speed_add1"; recipe = { {'','bucket:bucket_water','dye:cyan'}, {'','vessels:drinking_glass','dye:cyan'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:speed_add2"; recipe = { {'','potions:speed_add1','dye:cyan'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:speed_add3"; recipe = { {'','potions:speed_add2','dye:cyan'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:speed_sub3"; recipe = { {'dye:cyan','potions:speed_sub2',''}, {'dye:cyan','',''}, {'dye:cyan','',''}, }; })
-minetest.register_craft({ output = "potions:speed_sub2"; recipe = { {'dye:cyan','potions:speed_sub1',''}, {'dye:cyan','',''}, {'dye:cyan','',''}, }; })
-minetest.register_craft({ output = "potions:speed_sub1"; recipe = { {'dye:cyan','bucket:bucket_water',''}, {'dye:cyan','vessels:drinking_glass',''}, {'dye:cyan','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:speed_sub1"; recipe = { {'dye:cyan','potions:speed_add1',''}, {'dye:cyan','',''}, {'dye:cyan','',''}, }; })
-minetest.register_craft({ output = "potions:speed_add1"; recipe = { {'dye:cyan','potions:speed_add2',''}, {'dye:cyan','',''}, {'dye:cyan','',''}, }; })
-minetest.register_craft({ output = "potions:speed_add2"; recipe = { {'dye:cyan','potions:speed_add3',''}, {'dye:cyan','',''}, {'dye:cyan','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_sub2",
+	recipe = {
+		{'','potions:speed_sub3','dye:cyan'},
+		{'','',''},
+		{'','',''},
+	},
+})
 
-minetest.register_craft({ output = "potions:antigravity_sub2"; recipe = { {'','potions:antigravity_sub3','dye:violet'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_sub1"; recipe = { {'','potions:antigravity_sub2','dye:violet'}, {'','',''}, {'','',''}, }; }) 
-minetest.register_craft({ output = "potions:antigravity_add1"; recipe = { {'','potions:antigravity_sub1','dye:violet'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_add1"; recipe = { {'','bucket:bucket_water','dye:violet'}, {'','vessels:drinking_glass','dye:violet'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:antigravity_add2"; recipe = { {'','potions:antigravity_add1','dye:violet'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_add3"; recipe = { {'','potions:antigravity_add2','dye:violet'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_sub3"; recipe = { {'dye:violet','potions:antigravity_sub2',''}, {'dye:violet','',''}, {'dye:violet','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_sub2"; recipe = { {'dye:violet','potions:antigravity_sub1',''}, {'dye:violet','',''}, {'dye:violet','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_sub1"; recipe = { {'dye:violet','bucket:bucket_water',''}, {'dye:violet','vessels:drinking_glass',''}, {'dye:violet','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:antigravity_sub1"; recipe = { {'dye:violet','potions:antigravity_add1',''}, {'dye:violet','',''}, {'dye:violet','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_add1"; recipe = { {'dye:violet','potions:antigravity_add2',''}, {'dye:violet','',''}, {'dye:violet','',''}, }; })
-minetest.register_craft({ output = "potions:antigravity_add2"; recipe = { {'dye:violet','potions:antigravity_add3',''}, {'dye:violet','',''}, {'dye:violet','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_sub1",
+	recipe = {
+		{'','potions:speed_sub2','dye:cyan'},
+		{'','',''},
+		{'','',''},
+	},
+})
 
-minetest.register_craft({ output = "potions:jumping_sub2"; recipe = { {'','potions:jumping_sub3','dye:yellow'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_sub1"; recipe = { {'','potions:jumping_sub2','dye:yellow'}, {'','',''}, {'','',''}, }; }) 
-minetest.register_craft({ output = "potions:jumping_add1"; recipe = { {'','potions:jumping_sub1','dye:yellow'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_add1"; recipe = { {'','bucket:bucket_water','dye:yellow'}, {'','vessels:drinking_glass','dye:yellow'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:jumping_add2"; recipe = { {'','potions:jumping_add1','dye:yellow'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_add3"; recipe = { {'','potions:jumping_add2','dye:yellow'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_sub3"; recipe = { {'dye:yellow','potions:jumping_sub2',''}, {'dye:yellow','',''}, {'dye:yellow','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_sub2"; recipe = { {'dye:yellow','potions:jumping_sub1',''}, {'dye:yellow','',''}, {'dye:yellow','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_sub1"; recipe = { {'dye:yellow','bucket:bucket_water',''}, {'dye:yellow','vessels:drinking_glass',''}, {'dye:yellow','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:jumping_sub1"; recipe = { {'dye:yellow','potions:jumping_add1',''}, {'dye:yellow','',''}, {'dye:yellow','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_add1"; recipe = { {'dye:yellow','potions:jumping_add2',''}, {'dye:yellow','',''}, {'dye:yellow','',''}, }; })
-minetest.register_craft({ output = "potions:jumping_add2"; recipe = { {'dye:yellow','potions:jumping_add3',''}, {'dye:yellow','',''}, {'dye:yellow','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_add1",
+	recipe = {
+		{'','potions:speed_sub1','dye:cyan'},
+		{'','',''},
+		{'','',''},
+	},
+})
 
-minetest.register_craft({ output = "potions:air_sub2"; recipe = { {'','potions:air_sub3','dye:green'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:air_sub1"; recipe = { {'','potions:air_sub2','dye:green'}, {'','',''}, {'','',''}, }; }) 
-minetest.register_craft({ output = "potions:air_add1"; recipe = { {'','potions:air_sub1','dye:green'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:air_add1"; recipe = { {'','bucket:bucket_water','dye:green'}, {'','vessels:drinking_glass','dye:green'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:air_add2"; recipe = { {'','potions:air_add1','dye:green'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:air_add3"; recipe = { {'','potions:air_add2','dye:green'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:air_sub3"; recipe = { {'dye:green','potions:air_sub2',''}, {'dye:green','',''}, {'dye:green','',''}, }; })
-minetest.register_craft({ output = "potions:air_sub2"; recipe = { {'dye:green','potions:air_sub1',''}, {'dye:green','',''}, {'dye:green','',''}, }; })
-minetest.register_craft({ output = "potions:air_sub1"; recipe = { {'dye:green','bucket:bucket_water',''}, {'dye:green','vessels:drinking_glass',''}, {'dye:green','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:air_sub1"; recipe = { {'dye:green','potions:air_add1',''}, {'dye:green','',''}, {'dye:green','',''}, }; })
-minetest.register_craft({ output = "potions:air_add1"; recipe = { {'dye:green','potions:air_add2',''}, {'dye:green','',''}, {'dye:green','',''}, }; })
-minetest.register_craft({ output = "potions:air_add2"; recipe = { {'dye:green','potions:air_add3',''}, {'dye:green','',''}, {'dye:green','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:cyan'},
+		{'','vessels:drinking_glass','dye:cyan'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
 
-minetest.register_craft({ output = "potions:ouair_sub2"; recipe = { {'','potions:ouair_sub3','dye:brown'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_sub1"; recipe = { {'','potions:ouair_sub2','dye:brown'}, {'','',''}, {'','',''}, }; }) 
-minetest.register_craft({ output = "potions:ouair_add1"; recipe = { {'','potions:ouair_sub1','dye:brown'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_add1"; recipe = { {'','bucket:bucket_water','dye:brown'}, {'','vessels:drinking_glass','dye:brown'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:ouair_add2"; recipe = { {'','potions:ouair_add1','dye:brown'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_add3"; recipe = { {'','potions:ouair_add2','dye:brown'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_sub3"; recipe = { {'dye:brown','potions:ouair_sub2',''}, {'dye:brown','',''}, {'dye:brown','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_sub2"; recipe = { {'dye:brown','potions:ouair_sub1',''}, {'dye:brown','',''}, {'dye:brown','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_sub1"; recipe = { {'dye:brown','bucket:bucket_water',''}, {'dye:brown','vessels:drinking_glass',''}, {'dye:brown','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:ouair_sub1"; recipe = { {'dye:brown','potions:ouair_add1',''}, {'dye:brown','',''}, {'dye:brown','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_add1"; recipe = { {'dye:brown','potions:ouair_add2',''}, {'dye:brown','',''}, {'dye:brown','',''}, }; })
-minetest.register_craft({ output = "potions:ouair_add2"; recipe = { {'dye:brown','potions:ouair_add3',''}, {'dye:brown','',''}, {'dye:brown','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_add2",
+	recipe = {
+		{'','potions:speed_add1','dye:cyan'},
+		{'','',''},
+		{'','',''},
+	},
+})
 
-minetest.register_craft({ output = "potions:health_sub2"; recipe = { {'','potions:health_sub3','dye:red'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:health_sub1"; recipe = { {'','potions:health_sub2','dye:red'}, {'','',''}, {'','',''}, }; }) 
-minetest.register_craft({ output = "potions:health_add1"; recipe = { {'','potions:health_sub1','dye:red'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:health_add1"; recipe = { {'','bucket:bucket_water','dye:red'}, {'','vessels:drinking_glass','dye:red'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:health_add2"; recipe = { {'','potions:health_add1','dye:red'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:health_add3"; recipe = { {'','potions:health_add2','dye:red'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:health_sub3"; recipe = { {'dye:red','potions:health_sub2',''}, {'dye:red','',''}, {'dye:red','',''}, }; })
-minetest.register_craft({ output = "potions:health_sub2"; recipe = { {'dye:red','potions:health_sub1',''}, {'dye:red','',''}, {'dye:red','',''}, }; })
-minetest.register_craft({ output = "potions:health_sub1"; recipe = { {'dye:red','bucket:bucket_water',''}, {'dye:red','vessels:drinking_glass',''}, {'dye:red','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:health_sub1"; recipe = { {'dye:red','potions:health_add1',''}, {'dye:red','',''}, {'dye:red','',''}, }; })
-minetest.register_craft({ output = "potions:health_add1"; recipe = { {'dye:red','potions:health_add2',''}, {'dye:red','',''}, {'dye:red','',''}, }; })
-minetest.register_craft({ output = "potions:health_add2"; recipe = { {'dye:red','potions:health_add3',''}, {'dye:red','',''}, {'dye:red','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_add3",
+	recipe = {
+		{'','potions:speed_add2','dye:cyan'},
+		{'','',''},
+		{'','',''},
+	},
+})
 
-minetest.register_craft({ output = "potions:ouhealth_sub2"; recipe = { {'','potions:ouhealth_sub3','dye:blue'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_sub1"; recipe = { {'','potions:ouhealth_sub2','dye:blue'}, {'','',''}, {'','',''}, }; }) 
-minetest.register_craft({ output = "potions:ouhealth_add1"; recipe = { {'','potions:ouhealth_sub1','dye:blue'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_add1"; recipe = { {'','bucket:bucket_water','dye:blue'}, {'','vessels:drinking_glass','dye:blue'}, {'','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:ouhealth_add2"; recipe = { {'','potions:ouhealth_add1','dye:blue'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_add3"; recipe = { {'','potions:ouhealth_add2','dye:blue'}, {'','',''}, {'','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_sub3"; recipe = { {'dye:blue','potions:ouhealth_sub2',''}, {'dye:blue','',''}, {'dye:blue','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_sub2"; recipe = { {'dye:blue','potions:ouhealth_sub1',''}, {'dye:blue','',''}, {'dye:blue','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_sub1"; recipe = { {'dye:blue','bucket:bucket_water',''}, {'dye:blue','vessels:drinking_glass',''}, {'dye:blue','',''}, }; replacements = { {'bucket:bucket_water','bucket:bucket_empty'}, }; })
-minetest.register_craft({ output = "potions:ouhealth_sub1"; recipe = { {'dye:blue','potions:ouhealth_add1',''}, {'dye:blue','',''}, {'dye:blue','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_add1"; recipe = { {'dye:blue','potions:ouhealth_add2',''}, {'dye:blue','',''}, {'dye:blue','',''}, }; })
-minetest.register_craft({ output = "potions:ouhealth_add2"; recipe = { {'dye:blue','potions:ouhealth_add3',''}, {'dye:blue','',''}, {'dye:blue','',''}, }; })
+minetest.register_craft({
+	output = "potions:speed_sub3",
+	recipe = {
+		{'dye:cyan','potions:speed_sub2',''},
+		{'dye:cyan','',''},
+		{'dye:cyan','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:speed_sub2",
+	recipe = {
+		{'dye:cyan','potions:speed_sub1',''},
+		{'dye:cyan','',''},
+		{'dye:cyan','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:speed_sub1",
+	recipe = {
+		{'dye:cyan','bucket:bucket_water',''},
+		{'dye:cyan','vessels:drinking_glass',''},
+		{'dye:cyan','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:speed_sub1",
+	recipe = {
+		{'dye:cyan','potions:speed_add1',''},
+		{'dye:cyan','',''},
+		{'dye:cyan','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:speed_add1",
+	recipe = {
+		{'dye:cyan','potions:speed_add2',''},
+		{'dye:cyan','',''},
+		{'dye:cyan','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:speed_add2",
+	recipe = {
+		{'dye:cyan','potions:speed_add3',''},
+		{'dye:cyan','',''},
+		{'dye:cyan','',''},
+	},
+})
+
+
+minetest.register_craft({
+	output = "potions:antigravity_sub2",
+	recipe = {
+		{'','potions:antigravity_sub3','dye:violet'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_sub1",
+	recipe = {
+		{'','potions:antigravity_sub2','dye:violet'},
+		{'','',''},
+		{'','',''},
+	},
+})
+ 
+minetest.register_craft({
+	output = "potions:antigravity_add1",
+	recipe = {
+		{'','potions:antigravity_sub1','dye:violet'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:violet'},
+		{'','vessels:drinking_glass','dye:violet'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_add2",
+	recipe = {
+		{'','potions:antigravity_add1','dye:violet'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_add3",
+	recipe = {
+		{'','potions:antigravity_add2','dye:violet'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_sub3",
+	recipe = {
+		{'dye:violet','potions:antigravity_sub2',''},
+		{'dye:violet','',''},
+		{'dye:violet','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_sub2",
+	recipe = {
+		{'dye:violet','potions:antigravity_sub1',''},
+		{'dye:violet','',''},
+		{'dye:violet','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_sub1",
+	recipe = {
+		{'dye:violet','bucket:bucket_water',''},
+		{'dye:violet','vessels:drinking_glass',''},
+		{'dye:violet','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_sub1",
+	recipe = {
+		{'dye:violet','potions:antigravity_add1',''},
+		{'dye:violet','',''},
+		{'dye:violet','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_add1",
+	recipe = {
+		{'dye:violet','potions:antigravity_add2',''},
+		{'dye:violet','',''},
+		{'dye:violet','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:antigravity_add2",
+	recipe = {
+		{'dye:violet','potions:antigravity_add3',''},
+		{'dye:violet','',''},
+		{'dye:violet','',''},
+	},
+})
+
+
+minetest.register_craft({
+	output = "potions:jumping_sub2",
+	recipe = {
+		{'','potions:jumping_sub3','dye:yellow'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_sub1",
+	recipe = {
+		{'','potions:jumping_sub2','dye:yellow'},
+		{'','',''},
+		{'','',''},
+	},
+})
+ 
+minetest.register_craft({
+	output = "potions:jumping_add1",
+	recipe = {
+		{'','potions:jumping_sub1','dye:yellow'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:yellow'},
+		{'','vessels:drinking_glass','dye:yellow'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_add2",
+	recipe = {
+		{'','potions:jumping_add1','dye:yellow'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_add3",
+	recipe = {
+		{'','potions:jumping_add2','dye:yellow'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_sub3",
+	recipe = {
+		{'dye:yellow','potions:jumping_sub2',''},
+		{'dye:yellow','',''},
+		{'dye:yellow','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_sub2",
+	recipe = {
+		{'dye:yellow','potions:jumping_sub1',''},
+		{'dye:yellow','',''},
+		{'dye:yellow','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_sub1",
+	recipe = {
+		{'dye:yellow','bucket:bucket_water',''},
+		{'dye:yellow','vessels:drinking_glass',''},
+		{'dye:yellow','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_sub1",
+	recipe = {
+		{'dye:yellow','potions:jumping_add1',''},
+		{'dye:yellow','',''},
+		{'dye:yellow','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_add1",
+	recipe = {
+		{'dye:yellow','potions:jumping_add2',''},
+		{'dye:yellow','',''},
+		{'dye:yellow','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:jumping_add2",
+	recipe = {
+		{'dye:yellow','potions:jumping_add3',''},
+		{'dye:yellow','',''},
+		{'dye:yellow','',''},
+	},
+})
+
+
+minetest.register_craft({
+	output = "potions:air_sub2",
+	recipe = {
+		{'','potions:air_sub3','dye:green'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_sub1",
+	recipe = {
+		{'','potions:air_sub2','dye:green'},
+		{'','',''},
+		{'','',''},
+	},
+})
+ 
+minetest.register_craft({
+	output = "potions:air_add1",
+	recipe = {
+		{'','potions:air_sub1','dye:green'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:green'},
+		{'','vessels:drinking_glass','dye:green'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_add2",
+	recipe = {
+		{'','potions:air_add1','dye:green'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_add3",
+	recipe = {
+		{'','potions:air_add2','dye:green'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_sub3",
+	recipe = {
+		{'dye:green','potions:air_sub2',''},
+		{'dye:green','',''},
+		{'dye:green','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_sub2",
+	recipe = {
+		{'dye:green','potions:air_sub1',''},
+		{'dye:green','',''},
+		{'dye:green','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_sub1",
+	recipe = {
+		{'dye:green','bucket:bucket_water',''},
+		{'dye:green','vessels:drinking_glass',''},
+		{'dye:green','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_sub1",
+	recipe = {
+		{'dye:green','potions:air_add1',''},
+		{'dye:green','',''},
+		{'dye:green','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_add1",
+	recipe = {
+		{'dye:green','potions:air_add2',''},
+		{'dye:green','',''},
+		{'dye:green','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:air_add2",
+	recipe = {
+		{'dye:green','potions:air_add3',''},
+		{'dye:green','',''},
+		{'dye:green','',''},
+	},
+})
+
+
+minetest.register_craft({
+	output = "potions:ouair_sub2",
+	recipe = {
+		{'','potions:ouair_sub3','dye:brown'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_sub1",
+	recipe = {
+		{'','potions:ouair_sub2','dye:brown'},
+		{'','',''},
+		{'','',''},
+	},
+})
+ 
+minetest.register_craft({
+	output = "potions:ouair_add1",
+	recipe = {
+		{'','potions:ouair_sub1','dye:brown'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:brown'},
+		{'','vessels:drinking_glass','dye:brown'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_add2",
+	recipe = {
+		{'','potions:ouair_add1','dye:brown'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_add3",
+	recipe = {
+		{'','potions:ouair_add2','dye:brown'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_sub3",
+	recipe = {
+		{'dye:brown','potions:ouair_sub2',''},
+		{'dye:brown','',''},
+		{'dye:brown','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_sub2",
+	recipe = {
+		{'dye:brown','potions:ouair_sub1',''},
+		{'dye:brown','',''},
+		{'dye:brown','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_sub1",
+	recipe = {
+		{'dye:brown','bucket:bucket_water',''},
+		{'dye:brown','vessels:drinking_glass',''},
+		{'dye:brown','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_sub1",
+	recipe = {
+		{'dye:brown','potions:ouair_add1',''},
+		{'dye:brown','',''},
+		{'dye:brown','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_add1",
+	recipe = {
+		{'dye:brown','potions:ouair_add2',''},
+		{'dye:brown','',''},
+		{'dye:brown','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouair_add2",
+	recipe = {
+		{'dye:brown','potions:ouair_add3',''},
+		{'dye:brown','',''},
+		{'dye:brown','',''},
+	},
+})
+
+
+minetest.register_craft({
+	output = "potions:health_sub2",
+	recipe = {
+		{'','potions:health_sub3','dye:red'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_sub1",
+	recipe = {
+		{'','potions:health_sub2','dye:red'},
+		{'','',''},
+		{'','',''},
+	},
+})
+ 
+minetest.register_craft({
+	output = "potions:health_add1",
+	recipe = {
+		{'','potions:health_sub1','dye:red'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:red'},
+		{'','vessels:drinking_glass','dye:red'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_add2",
+	recipe = {
+		{'','potions:health_add1','dye:red'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_add3",
+	recipe = {
+		{'','potions:health_add2','dye:red'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_sub3",
+	recipe = {
+		{'dye:red','potions:health_sub2',''},
+		{'dye:red','',''},
+		{'dye:red','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_sub2",
+	recipe = {
+		{'dye:red','potions:health_sub1',''},
+		{'dye:red','',''},
+		{'dye:red','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_sub1",
+	recipe = {
+		{'dye:red','bucket:bucket_water',''},
+		{'dye:red','vessels:drinking_glass',''},
+		{'dye:red','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_sub1",
+	recipe = {
+		{'dye:red','potions:health_add1',''},
+		{'dye:red','',''},
+		{'dye:red','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_add1",
+	recipe = {
+		{'dye:red','potions:health_add2',''},
+		{'dye:red','',''},
+		{'dye:red','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:health_add2",
+	recipe = {
+		{'dye:red','potions:health_add3',''},
+		{'dye:red','',''},
+		{'dye:red','',''},
+	},
+})
+
+
+minetest.register_craft({
+	output = "potions:ouhealth_sub2",
+	recipe = {
+		{'','potions:ouhealth_sub3','dye:blue'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_sub1",
+	recipe = {
+		{'','potions:ouhealth_sub2','dye:blue'},
+		{'','',''},
+		{'','',''},
+	},
+})
+ 
+minetest.register_craft({
+	output = "potions:ouhealth_add1",
+	recipe = {
+		{'','potions:ouhealth_sub1','dye:blue'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_add1",
+	recipe = {
+		{'','bucket:bucket_water','dye:blue'},
+		{'','vessels:drinking_glass','dye:blue'},
+		{'','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_add2",
+	recipe = {
+		{'','potions:ouhealth_add1','dye:blue'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_add3",
+	recipe = {
+		{'','potions:ouhealth_add2','dye:blue'},
+		{'','',''},
+		{'','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_sub3",
+	recipe = {
+		{'dye:blue','potions:ouhealth_sub2',''},
+		{'dye:blue','',''},
+		{'dye:blue','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_sub2",
+	recipe = {
+		{'dye:blue','potions:ouhealth_sub1',''},
+		{'dye:blue','',''},
+		{'dye:blue','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_sub1",
+	recipe = {
+		{'dye:blue','bucket:bucket_water',''},
+		{'dye:blue','vessels:drinking_glass',''},
+		{'dye:blue','',''}, }; replacements = {
+		{'bucket:bucket_water','bucket:bucket_empty'},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_sub1",
+	recipe = {
+		{'dye:blue','potions:ouhealth_add1',''},
+		{'dye:blue','',''},
+		{'dye:blue','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_add1",
+	recipe = {
+		{'dye:blue','potions:ouhealth_add2',''},
+		{'dye:blue','',''},
+		{'dye:blue','',''},
+	},
+})
+
+minetest.register_craft({
+	output = "potions:ouhealth_add2",
+	recipe = {
+		{'dye:blue','potions:ouhealth_add3',''},
+		{'dye:blue','',''},
+		{'dye:blue','',''},
+	},
+})
+
 
 minetest.register_on_joinplayer(function(player)
 	potions.players[player:get_player_name()] = {
