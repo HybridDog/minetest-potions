@@ -4,7 +4,7 @@ potions.register_arrow = function(potion_name, name, hname, potion_use_funct, de
 		inventory_image = img.."^throwing_arrow.png",
 		groups = {not_in_creative_inventory=1},
 	})
-	
+
 --	minetest.register_node(":throwing:arrow_box", {
 --		drawtype = "nodebox",
 --		node_box = {
@@ -20,7 +20,7 @@ potions.register_arrow = function(potion_name, name, hname, potion_use_funct, de
 --				{7.5/17, -2.5/17, 2.5/17, 6.5/17, -1.5/17, 1.5/17},
 --				{7.5/17, 2.5/17, -2.5/17, 6.5/17, 1.5/17, -1.5/17},
 --				{6.5/17, -1.5/17, -1.5/17, 7.5/17, -2.5/17, -2.5/17},
---				
+--
 --				{7.5/17, 2.5/17, 2.5/17, 8.5/17, 3.5/17, 3.5/17},
 --				{8.5/17, -3.5/17, 3.5/17, 7.5/17, -2.5/17, 2.5/17},
 --				{8.5/17, 3.5/17, -3.5/17, 7.5/17, 2.5/17, -2.5/17},
@@ -30,7 +30,7 @@ potions.register_arrow = function(potion_name, name, hname, potion_use_funct, de
 --		tiles = {"throwing_arrow.png", "throwing_arrow.png", "throwing_arrow_back.png", "throwing_arrow_front.png", "throwing_arrow_2.png", "throwing_arrow.png"},
 --		groups = {not_in_creative_inventory=1},
 --	})
-	
+
 	local THROWING_ARROW_ENTITY={
 		physical = false,
 		timer=0,
@@ -40,12 +40,12 @@ potions.register_arrow = function(potion_name, name, hname, potion_use_funct, de
 		lastpos={},
 		collisionbox = {0,0,0,0,0,0},
 	}
-	
+
 	THROWING_ARROW_ENTITY.on_step = function(self, dtime)
 		self.timer=self.timer+dtime
 		local pos = self.object:getpos()
 		local node = minetest.env:get_node(pos)
-	
+
 		if self.timer>0.2 then
 			local objs = minetest.env:get_objects_inside_radius({x=pos.x,y=pos.y,z=pos.z}, 2)
 			for k, obj in pairs(objs) do
@@ -60,7 +60,7 @@ potions.register_arrow = function(potion_name, name, hname, potion_use_funct, de
 				end
 			end
 		end
-	
+
 		if self.lastpos.x~=nil then
 			if node.name ~= "air" then
 				self.object:remove()
@@ -68,15 +68,15 @@ potions.register_arrow = function(potion_name, name, hname, potion_use_funct, de
 		end
 		self.lastpos={x=pos.x, y=pos.y, z=pos.z}
 	end
-	
+
 	minetest.register_entity(potion_name.."_arrow_entity", THROWING_ARROW_ENTITY)
-	
+
 	minetest.register_craft({
 		output = potion_name.."_arrow",
 		recipe = {
 			{'throwing:arrow', potion_name},
 		}
 	})
-	
+
 	arrows[#arrows+1] = {potion_name.."_arrow", potion_name.."_arrow_entity"}
 end

@@ -59,7 +59,7 @@ potions = {
 							br = math.min(11, br)
 							br = math.max(0, br)
 							user:set_breath(br)
-							
+
 							if i==(sdata.time or 0) then
 								potions_e.air = potions_e.air - (sdata.time or 0)
 							end
@@ -210,7 +210,7 @@ potions = {
 			},
 			potionWalk = funct,
 		})
-		
+
 		minetest.register_node("potions:"..name.."_source", {
 			description = "Potion ("..hname..")",
 			inventory_image = minetest.inventorycube("oil_oil.png"),
@@ -231,7 +231,7 @@ potions = {
 			},
 			potionWalk = funct,
 		})
-		
+
 --		bucket.register_liquid(
 --			"potions:"..name.."_source",
 --			"potions:"..name.."_flowing",
@@ -529,9 +529,9 @@ end)
 ----			if def.potionWalk~=nil then
 ----				def.potionWalk(nil, player, nil)
 ----			end
-----			
+----
 ----			if potions.players[player:get_player_name()].tnt > 0 and math.random(potions.players[player:get_player_name()].tnt)==0 then
-----				
+----
 ----			end
 --		end
 --		timer = 0
